@@ -429,47 +429,12 @@ def main():
         st.write("Since we are currently using a free tier instance of AWS, "
                  "we disabled mel-spec and ensemble models.\n\n"
                  "If you want to try them we recommend to clone our GitHub repo")
-        st.code("git clone https://github.com/CyberMaryVer/speech-emotion-webapp.git", language='bash')
+       
 
-        st.write("After that, just uncomment the relevant sections in the app.py file "
-                 "to use these models:")
+    
+            
 
-    elif website_menu == "Our team":
-        st.subheader("Our team")
-        st.balloons()
-        col1, col2 = st.columns([3, 2])
-        with col1:
-            st.info("maria.s.startseva@gmail.com")
-            st.info("talbaram3192@gmail.com")
-            st.info("asherholder123@gmail.com")
-        with col2:
-            liimg = Image.open("images/LI-Logo.png")
-            st.image(liimg)
-            st.markdown(f""":speech_balloon: [Maria Startseva](https://www.linkedin.com/in/maria-startseva)""",
-                        unsafe_allow_html=True)
-            st.markdown(f""":speech_balloon: [Tal Baram](https://www.linkedin.com/in/tal-baram-b00b66180)""",
-                        unsafe_allow_html=True)
-            st.markdown(f""":speech_balloon: [Asher Holder](https://www.linkedin.com/in/asher-holder-526a05173)""",
-                        unsafe_allow_html=True)
-
-    elif website_menu == "Leave feedback":
-        st.subheader("Leave feedback")
-        user_input = st.text_area("Your feedback is greatly appreciated")
-        user_name = st.selectbox("Choose your personality", ["checker1", "checker2", "checker3", "checker4"])
-
-        if st.button("Submit"):
-            st.success(f"Message\n\"\"\"{user_input}\"\"\"\nwas sent")
-
-            if user_input == "log123456" and user_name == "checker4":
-                with open("log0.txt", "r", encoding="utf8") as f:
-                    st.text(f.read())
-            elif user_input == "feedback123456" and user_name == "checker4":
-                with open("log.txt", "r", encoding="utf8") as f:
-                    st.text(f.read())
-            else:
-                log_file(user_name + " " + user_input)
-                thankimg = Image.open("images/sticky.png")
-                st.image(thankimg)
+    
 
     else:
         import requests
